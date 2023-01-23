@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var number: Double = 10
+    @State var text: String = "chicken"
+    @State var currentView: Int = 0
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        //TabView {
+            //
+        if currentView == 0 {
+            MenuView(number: $number, text: $text, view: $currentView)
+        } else if currentView == 1 {
+            RecipeListView(number: $number, text: $text, view: $currentView)
+        }
+               // .tabItem {
+               //     Image(systemName: "timelapse")
+               //     Text("Menu")
+               // }
+       // }
     }
 }
 
